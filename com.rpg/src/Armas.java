@@ -52,19 +52,19 @@ public class Armas extends Jogador{
 
     //recarrega munição
     public void setBala(int municao) {
-        this.bala = municao;
+        this.bala = bala + municao;
         if(bala > limiteBala){ bala = limiteBala; }
     }
-    public void setGranada(int granada) {
-        this.granada = granada;
+    public void setGranada(int granadas) {
+        this.granada =granada + granadas;
         if(granada > limiteGranada) { granada = limiteGranada; }
     }
-    public void setFlecha(int flecha) {
-        this.flecha = flecha;
+    public void setFlecha(int flechas) {
+        this.flecha = flecha + flechas;
         if(flecha > limiteFlecha) { flecha = limiteFlecha; }
     }
-    public void setMana(int mana) {
-        this.mana = mana;
+    public void setMana(int manas) {
+        this.mana = mana + manas;
         if (mana > limiteMana) { mana = limiteMana; }
     }
 

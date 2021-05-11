@@ -1,4 +1,4 @@
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class Jogador {
@@ -9,6 +9,18 @@ public class Jogador {
     private double kill;
     private double score =0;
     private double danoBase=7;
+
+    public void pause(){
+        setScore();
+        for(boolean pausado = true; pausado;){
+            System.out.println("Jogo pausado");
+           pula.linhas(1);
+           System.out.println(nome);
+           System.out.println("Sua pontuação é: "+score);
+           System.out.println("Life: "+vida+"/"+vidaLimite);
+           System.out.println("Você matou "+kill+" monstros");
+        }
+    }
 
     public void setNome(){
         System.out.println("Qual seu nome meu bravo heroi?");
@@ -23,10 +35,6 @@ public class Jogador {
     }
 
     public double getDano(double danoArma){ return danoBase*danoArma; }
-    public void setAtaque(){
-        System.out.println(nome+"Como vamos atacar o inimigo?");
-        pula.linhas(2);
-    }
 
     public void setNv(){
         while(xp>=limitXp){

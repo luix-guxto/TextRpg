@@ -13,4 +13,4 @@ Um rpg que roda em console, totalmente back end
 ## Agradecimento especial
 
 Obrigado a
-[RafaelMaximiano], Sempre me insentiva a ter forças para continuar!
+[Digital Innovation one](https://digitalinnovation.one)

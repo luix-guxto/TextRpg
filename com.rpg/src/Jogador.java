@@ -31,6 +31,7 @@ public class Jogador {
     public void setNv(){
         while(xp>=limitXp){
             nv++            ;
+            danoBase=Math.floor(danoBase + danoBase * 0.5);
             vidaLimite+=10  ;
             vida=vidaLimite ;
             xp-=limitXp     ;

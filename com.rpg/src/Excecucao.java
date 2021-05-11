@@ -1,7 +1,6 @@
-import java.util.Scanner;
+
 import java.util.Calendar;
-import java.util.Random;
-import java.util.InputMismatchException;
+
 public class Excecucao {
     public static void main(String[] args){
         Limpeza console = new Limpeza();

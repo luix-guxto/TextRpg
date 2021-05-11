@@ -6,7 +6,7 @@
 ## Como executar?
 * ``` você pode ler um pouco do artigo a seguir```
 
-[Executando o Java Manualmente](https://autociencia.blogspot.com/2016/09/compilando-e-executando-um-arquivo-java.html)
+* [Executando o Java Manualmente](https://autociencia.blogspot.com/2016/09/compilando-e-executando-um-arquivo-java.html)
 
 * ```Ou pode tentar executar pela propria IDE```
 

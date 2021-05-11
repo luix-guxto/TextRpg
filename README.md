@@ -17,4 +17,4 @@
 
 Obrigado a
 * [Digital Innovation one](https://digitalinnovation.one), Plataforma de estudos aberta e gratuita!
-* Rafamaxx(https://github.com/rafamaxx), Sempre me incentiva a buscar conhecimentos!
+* [Rafamaxx](https://github.com/rafamaxx), Sempre me incentiva a buscar conhecimentos!

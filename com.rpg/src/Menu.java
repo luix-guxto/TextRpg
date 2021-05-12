@@ -14,9 +14,6 @@ public class Menu {
             if (erro == 1) {
                 System.out.println("Ops!\nEssa Arma não existe, tente outra!");
             }
-            if (erro == 2) {
-                System.out.println("Tente colocar um numero inteiro sem espaço");
-            }
             erro = 0;
             ferramentas.linhas(1);
             System.out.println("Vamos usar qual arma?");
@@ -33,11 +30,7 @@ public class Menu {
                 escolhe = false;
 
             } catch (InputMismatchException e) {
-
-                erro = 2;
                 idArma = -1;
-                escolhe = true;
-
             }
             if (idArma > 10 || idArma < 1) {
                 erro = 1;

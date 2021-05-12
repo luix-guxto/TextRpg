@@ -43,7 +43,6 @@ public class Placar {
                 setPosicaoMenor();
                 this.placarNome[posicaoMenor]=nomear;
             }
-
             public void setPlacarScore(double pontuacao){
                 setPosicaoMenor();
                 this.placarScore[posicaoMenor]=pontuacao;

@@ -1,7 +1,8 @@
 
 import java.util.Scanner;
 
-public class Jogador {
+public class Jogador{
+    Armas arma = new Armas();
     Limpeza pula = new Limpeza();
     private String nome;
     private double nv=1;
@@ -28,9 +29,9 @@ public class Jogador {
         nome=new Scanner(System.in).nextLine()+" ";
     }
 
-    public void setDamage(double damage){ this.vida=vida-damage; }
-    public void setVida(double coracao){
-        this.vida=vida+coracao;
+    public void tomaDano(double damage){ this.vida=vida-damage; }
+    public void recuperaVida(double recupera){
+        this.vida=vida+recupera;
         if(vida<vidaLimite){ vida=vidaLimite; }
     }
 

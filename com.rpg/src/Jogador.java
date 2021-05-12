@@ -1,9 +1,10 @@
+//definir como atribuir dano ao inimigo usando a arma
 
 import java.util.Scanner;
 
 public class Jogador{
     Armas arma = new Armas();
-    Limpeza pula = new Limpeza();
+    Ferramentas ferramentas = new Ferramentas();
     private String nome;
     private double nv=1;
     private double xp, vidaLimite=100, vida=100, limitXp=100;
@@ -13,19 +14,23 @@ public class Jogador{
 
     public void pause(){
         setScore();
-        for(boolean pausado = true; pausado;){
-            System.out.println("Jogo pausado");
-           pula.linhas(1);
+        ferramentas.linhas(50);
+
+           System.out.println("Jogo pausado");
+
+       ferramentas.linhas(1);
+
            System.out.println(nome);
            System.out.println("Sua pontuação é: "+score);
            System.out.println("Life: "+vida+"/"+vidaLimite);
            System.out.println("Você matou "+kill+" monstros");
-        }
+
+       ferramentas.para();
     }
 
     public void setNome(){
         System.out.println("Qual seu nome meu bravo heroi?");
-        pula.linhas(1);
+        ferramentas.linhas(1);
         nome=new Scanner(System.in).nextLine()+" ";
     }
 

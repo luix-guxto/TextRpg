@@ -1,5 +1,8 @@
-
+//finalizado
 public class Placar {
+    Ferramentas ferramentas = new Ferramentas();
+
+    //placar nominal
     private String[] placarNome = {
             "maria",
             "joao",
@@ -11,6 +14,8 @@ public class Placar {
             "luis",
             "henrique",
             "jose"};
+
+    //placar dos valores
     private double[] placarScore = {
             10,
             15,
@@ -21,13 +26,15 @@ public class Placar {
             75,
             350,
             11,
-            185};
-    private double menorScore;
+            185 };
+
+
     private int posicaoMenor;
 
 
+            //pega a menor posição
             public void setPosicaoMenor(){
-                menorScore=placarScore[0];
+                double menorScore = placarScore[0];
                 posicaoMenor=0;
                 for(int varrendo = 0; varrendo<10 ; varrendo++) {
                     if (placarScore[varrendo] < menorScore) {
@@ -37,8 +44,7 @@ public class Placar {
                 }
             }
 
-            public double getMenor(){ return menorScore; }
-
+            //escreve no placar
             public void setPlacarNome(String nomear){
                 setPosicaoMenor();
                 this.placarNome[posicaoMenor]=nomear;
@@ -47,6 +53,8 @@ public class Placar {
                 setPosicaoMenor();
                 this.placarScore[posicaoMenor]=pontuacao;
             }
+
+            //imprime o placar
             public void imprimePlacar(){
                 setPosicaoMenor();
 
@@ -163,6 +171,7 @@ public class Placar {
                 top10 = posicaoMenor;
                 System.out.println("10º "+placarNome[top10]+" - "+placarScore[top10]);
 
+                ferramentas.para();
             }
 
 }

@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-    Limpeza limpa = new Limpeza();
+    Ferramentas ferramentas = new Ferramentas();
 
     //escolhe uma arma
     public int arma(int nivEspada) {
@@ -10,7 +10,7 @@ public class Menu {
         int idArma = 1;
         for (boolean escolhe = true; escolhe; ) {
 
-            limpa.linhas(50);
+            ferramentas.linhas(50);
             if (erro == 1) {
                 System.out.println("Ops!\nEssa Arma não existe, tente outra!");
             }
@@ -18,10 +18,10 @@ public class Menu {
                 System.out.println("Tente colocar um numero inteiro sem espaço");
             }
             erro = 0;
-            limpa.linhas(1);
+            ferramentas.linhas(1);
             System.out.println("Vamos usar qual arma?");
 
-            limpa.linhas(1);
+            ferramentas.linhas(1);
 
             System.out.println("1.soco              2.espada nv." + nivEspada + "       3.pistola");
             System.out.println("4.metralhadora      5.arco                  6.besta");

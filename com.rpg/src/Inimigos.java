@@ -1,3 +1,4 @@
+//finalizado
 import java.util.Random;
 public class Inimigos {
     Random aleatorio = new Random();
@@ -75,15 +76,13 @@ public class Inimigos {
     }
 
     //dano do inimigo
-    public double getDano(){return dano; }
+    public double getDano(){ if( vida > 0 ){ return dano; } else{ return 0; } }
 
     //inimigo recebe o dano
 
-    public void setVida(double damage) {
-        this.vida = vida - damage;
-    }
+    public void setVida(double damage) { this.vida = vida - damage; }
 
     //define a vida do inimigo pelo id
-    public void setVida(){ vida=vidaLimite; }
+    private void setVida(){ vida=vidaLimite; }
 
 }

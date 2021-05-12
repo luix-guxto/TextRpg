@@ -1,8 +1,6 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
+//definir o retorno do dano da arma
 public class Armas{
-    Limpeza limpa = new Limpeza();
+    Ferramentas ferramentas = new Ferramentas();
     Menu menu = new Menu();
     public int idArma=1;
     /* arma by id
@@ -36,6 +34,7 @@ public class Armas{
     public int getFlecha(){ return flecha; }
     public int getGranada(){ return granada; }
     public int getMana(){ return mana; }
+    public int getNvEspada(){ return nvEspada; }
 
     //retorna a capacidade maxima da moxila
     public int getLimiteBala() { return limiteBala; }

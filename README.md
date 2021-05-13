@@ -15,9 +15,6 @@
 * [GitHub](https://github.com/luix-guxto)
 
 ## Agradecimento especial
-
-Obrigado a
-* [Digital Innovation one](https://digitalinnovation.one)
 * Um rpg que roda em console, totalmente back end
 
 * criado com o intuito de melhorar a pratica das O.O, tentando aplicar o conseito S.O.L.I.D
@@ -31,6 +28,7 @@ Obrigado a
 
 ## Contato
 * [GitHub](https://github.com/luix-guxto)
+* [WhatsApp](wa.me/5531999949012)
 
 ## Agradecimento especial
 

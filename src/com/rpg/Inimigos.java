@@ -1,4 +1,3 @@
-//finalizado
 package com.rpg;
 import java.util.Random;
 public class Inimigos {
@@ -34,7 +33,7 @@ public class Inimigos {
             if (idInimigo == 7){ return "Militar"; }
             if (idInimigo == 8){ return "Exercito"; }
             if (idInimigo == 9){ return "Fantasma"; }
-            if (idInimigo == 10){ return "Chefão"; }
+            if (idInimigo == 10){ return "ChefÃ£o"; }
         else{ return "Slime"; }
     }
 
@@ -50,35 +49,41 @@ public class Inimigos {
         //conforme o nivel do jogador sobe, aparece inimigos mais fortes
         if(nivelJogador >=0  && nivelJogador <=  2){ idInimigo = 1; } //nenhum ou slime
         else {
-            if (nivelJogador > 2 && nivelJogador <= 5) {
-                idInimigo = aleatorio.nextInt(2)+1;
-            }else{
-            if (nivelJogador > 5 && nivelJogador <= 8) {
-                idInimigo = aleatorio.nextInt(3)+1;
-            }else{
-            if (nivelJogador > 8 && nivelJogador <= 10) {
-                idInimigo = aleatorio.nextInt(4)+1;
-            }else{
-            if (nivelJogador > 10 && nivelJogador <= 15) {
-                idInimigo = aleatorio.nextInt(5)+1;
-            }else{
-            if (nivelJogador > 15 && nivelJogador <= 18) {
-                idInimigo = aleatorio.nextInt(6)+1;
-            }else{
-            if (nivelJogador > 18 && nivelJogador <= 25) {
-                idInimigo = aleatorio.nextInt(7)+1;
-            }else{
-            if (nivelJogador > 25 && nivelJogador <= 30) {
-                idInimigo = aleatorio.nextInt(8)+1;
-            }else{
-                if (nivelJogador > 30 && nivelJogador<=50){
-                    idInimigo = aleatorio.nextInt(9)+1;
-                }//todos
-            else {
-                idInimigo = aleatorio.nextInt(10)+1;
+                if (nivelJogador > 2 && nivelJogador <= 5) {
+                    idInimigo = aleatorio.nextInt(2)+1;
+                }else{
+                    if (nivelJogador > 5 && nivelJogador <= 8) {
+                        idInimigo = aleatorio.nextInt(3)+1;
+                    }else{
+                        if (nivelJogador > 8 && nivelJogador <= 10) {
+                            idInimigo = aleatorio.nextInt(4)+1;
+                        }else{
+                            if (nivelJogador > 10 && nivelJogador <= 15) {
+                                idInimigo = aleatorio.nextInt(5)+1;
+                            }else{
+                                if (nivelJogador > 15 && nivelJogador <= 18) {
+                                    idInimigo = aleatorio.nextInt(6)+1;
+                                }else{
+                                    if (nivelJogador > 18 && nivelJogador <= 25) {
+                                        idInimigo = aleatorio.nextInt(7)+1;
+                                    }else{
+                                        if (nivelJogador > 25 && nivelJogador <= 30) {
+                                            idInimigo = aleatorio.nextInt(8)+1;
+                                        }else{
+                                            if (nivelJogador > 30 && nivelJogador<=50){
+                                                idInimigo = aleatorio.nextInt(9)+1;
+                                            }
+                                        else {
+                                            idInimigo = aleatorio.nextInt(10)+1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-        }}}}}}}}//todos e boss
-        System.out.println();
+        }
         //inimigos
             if(idInimigo == 1){vida = 20; dano =   1;} //slime
             if(idInimigo == 2){vida = 25; dano =   2;} //esqueleto

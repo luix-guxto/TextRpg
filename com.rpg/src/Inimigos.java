@@ -79,13 +79,13 @@ public class Inimigos {
         }}}}}}}}//todos e boss
         System.out.println();
         //inimigos
-            if(idInimigo == 1){vida = 10; dano =   2;} //slime
-            if(idInimigo == 2){vida =  5; dano =  10;} //esqueleto
-            if(idInimigo == 3){vida = 10; dano =  10;} //zumbi
-            if(idInimigo == 4){vida = 15; dano =  10;} //guerreiro
-            if(idInimigo == 5){vida = 20; dano =  15;} //lobizomen
-            if(idInimigo == 6){vida = 15; dano =  25;} //mago
-            if(idInimigo == 7){vida = 30; dano =  30;} //militar
+            if(idInimigo == 1){vida = 20; dano =   1;} //slime
+            if(idInimigo == 2){vida = 25; dano =   2;} //esqueleto
+            if(idInimigo == 3){vida = 30; dano =   5;} //zumbi
+            if(idInimigo == 4){vida = 40; dano =  10;} //guerreiro
+            if(idInimigo == 5){vida = 50; dano =  15;} //lobizomen
+            if(idInimigo == 6){vida = 55; dano =  25;} //mago
+            if(idInimigo == 7){vida = 60; dano =  30;} //militar
             if(idInimigo == 8){vida = 50; dano = 100;} //exercito
             if(idInimigo == 9){vida = 100;dano = 50;} //fantasma
 
@@ -100,7 +100,7 @@ vidaLimite = vida;
     //da xp
     public double giveXp(){
         if(vida<=0) {
-            return Math.floor((aleatorio.nextDouble() * (idInimigo + aleatorio.nextInt(100)) + idInimigo));
+            return Math.floor((aleatorio.nextDouble() * (aleatorio.nextInt(100+idInimigo)) + idInimigo));
 
         }
         else {

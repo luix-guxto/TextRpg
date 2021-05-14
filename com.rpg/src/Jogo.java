@@ -207,14 +207,20 @@ public class Jogo {
                 if (opcao==4){
                     mochila.menuMochila(jogador.getNome());
                 }
+                if(opcao==5){
+                    jogador.tomaDano(jogador.getVida());
+                    menu=false;
+                }
                 if(opcao!=1 && opcao!=2 && opcao!=3 && opcao!=4){
                     erro =1;
                 }
             }
         //ataque
-            jogadorInfligeDano();
-            if (!(inimigoVivo())){
-                jogadorRecebeDano();
+            if(!(jogadorVivo())){
+                jogadorInfligeDano();
+                    if (!(inimigoVivo())){
+                        jogadorRecebeDano();
+                    }
             }
         //batalha acabou
                 if(inimigoVivo()){

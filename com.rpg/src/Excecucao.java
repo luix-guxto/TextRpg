@@ -7,7 +7,7 @@ public class Excecucao {
 
         for (boolean loopGame = true; loopGame;){
             int principal = menu.menuPrincipal();
-            if(principal==3){loopGame = false;}
+            if(principal==4){loopGame = false;}
             if(principal == 1){
                 jogo.setJogador();
                 for(boolean loopJogador = true; loopJogador;){
@@ -25,6 +25,7 @@ public class Excecucao {
                 jogo.placar.imprimePlacar();
             }
         }
+        System.out.println("Até a proxima!!!");
 
 //
     }

@@ -7,6 +7,7 @@ public class Excecucao {
 
         for (boolean loopGame = true; loopGame;){
             int principal = menu.menuPrincipal();
+            if(principal==3){loopGame = false;}
             if(principal == 1){
                 jogo.setJogador();
                 for(boolean loopJogador = true; loopJogador;){
@@ -14,10 +15,8 @@ public class Excecucao {
                     if(jogo.jogadorVivo()){
                         loopJogador=false;
                         jogo.gameOver();
-                        principal = menu.gameOver(jogo.jogador.getNome(),jogo.jogador.getScore(),jogo.jogador.getNv());
-                        if(principal == 2){
-                            loopGame = false;
-                        }
+                       int principalGameOver = menu.gameOver(jogo.jogador.getNome(),jogo.jogador.getScore(),jogo.jogador.getNv());
+                        loopGame = principalGameOver != 2;
                     }
                 }
                 jogo.placar.imprimePlacar();
@@ -25,7 +24,6 @@ public class Excecucao {
             if (principal == 3){
                 jogo.placar.imprimePlacar();
             }
-            else {loopGame = false;}
         }
 
 //

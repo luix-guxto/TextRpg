@@ -208,7 +208,7 @@ public class Jogo {
                     mochila.menuMochila(jogador.getNome());
                 }
                 if(opcao==5){
-                    jogador.tomaDano(jogador.getVida());
+                    jogador.tomaDano(jogador.getVidaLimite());
                     menu=false;
                 }
                 if(opcao!=1 && opcao!=2 && opcao!=3 && opcao!=4){

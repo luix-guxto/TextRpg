@@ -1,3 +1,4 @@
+//feramentas de parar execucao por um tempo e pular numero de linhas
 package com.rpg;
 import java.util.Scanner;
 

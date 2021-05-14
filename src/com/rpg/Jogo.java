@@ -2,10 +2,6 @@ package com.rpg;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
-
-/*
-//\\opcional definir save game
- */
 public class Jogo {
     Random aleatorio = new Random();
     Jogador jogador = new Jogador();
@@ -115,7 +111,7 @@ public class Jogo {
     //andar
     public void andar(){
         ferramentas.linhas(50);
-        System.out.println("você anda para frente e encontra");
+        System.out.println("vocÃª anda para frente e encontra");
         int andei = aleatorio.nextInt(2)+1;
         if(andei == 1){
             inimigos.setIdInimigo(jogador.getNv(), jogador.getVidaLimite());
@@ -125,7 +121,7 @@ public class Jogo {
             bau=0;
         }
         else{
-            System.out.println("Você achou um bau!");
+            System.out.println("VocÃª achou um bau!");
             ferramentas.para();
             getLoot(10);
             bau++;
@@ -147,18 +143,18 @@ public class Jogo {
         //menu
             for(boolean menu = true; menu ;) {
                 ferramentas.linhas(50);
-                if(erro == 1){ System.out.println("Ops!\nOpção invalida, tente outra!"); }
-                if(erro == 2){ System.out.println("Ops!\nAcabou a munição, tente trocar de arma!"); }
+                if(erro == 1){ System.out.println("Ops!\nOpÃ§Ã£o invalida, tente outra!"); }
+                if(erro == 2){ System.out.println("Ops!\nAcabou a muniÃ§Ã£o, tente trocar de arma!"); }
                 erro = 0;
                 System.out.println("        Batalhando contra " + inimigos.nomeInimigo());
                 ferramentas.linhas(3);
-                System.out.println("1. Escolher arma        2. atacar       3.usar poção    4. Mochila      5. Morrer :´(");
+                System.out.println("1. Escolher arma        2. atacar       3.usar poÃ§Ã£o    4. Mochila      5. Morrer :Â´(");
                 System.out.println(
                         "\nVida: " + jogador.getVida() + "/" + jogador.getVidaLimite() +
                                 "   Score: " + jogador.getScore() +
                                 "   Nivel: " + jogador.getNv() +
                                 "   Kills: " + jogador.getKill()+
-                                "   Poções: "+ mochila.getPocao());
+                                "   PoÃ§Ãµes: "+ mochila.getPocao());
                 try {
                         opcao = new Scanner(System.in).nextInt();
                     }catch (InputMismatchException h){

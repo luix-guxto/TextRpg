@@ -1,4 +1,3 @@
-//finalizado
 package com.rpg;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -26,12 +25,12 @@ public class Mochila extends Armas{
     public double usaPocao(double vidaJogador, String nomeJogador){
         ferramentas.linhas(50);
         if(pocao>0){
-            System.out.println(nomeJogador+"usou uma poção e recuperou "+vidaJogador);
+            System.out.println(nomeJogador+"usou uma poÃ§Ã£o e recuperou "+vidaJogador);
             ferramentas.para();
             return vidaJogador;
         }
         else {
-            System.out.println(nomeJogador+"você não possui poções :(");
+            System.out.println(nomeJogador+"vocÃª nÃ£o possui poÃ§Ãµes :(");
             ferramentas.para();
             return 0;
         }
@@ -77,9 +76,9 @@ public class Mochila extends Armas{
                         if(ervas>=5){
                             pocao++;
                             ervas-=5;
-                            System.out.println("Poção criada, você possui "+pocao+" poções");
+                            System.out.println("PoÃ§Ã£o criada, vocÃª possui "+pocao+" poÃ§Ãµes");
                         }else{
-                            System.out.println("Você não tem ervas o suficiente :(\n"+ervas+"/5 ervas nescessarias");
+                            System.out.println("VocÃª nÃ£o tem ervas o suficiente :(\n"+ervas+"/5 ervas nescessarias");
 
                         }
                         ferramentas.para();
@@ -95,25 +94,25 @@ public class Mochila extends Armas{
                     public void setPano(int tecido) {
                         pano=pano+tecido;
                         ferramentas.linhas(50);
-                        System.out.println("Você recebeu "+tecido+" panos!");
+                        System.out.println("VocÃª recebeu "+tecido+" panos!");
                         ferramentas.para();
                     }
                     public void setMinerio(int mineral) {
                         minerio = minerio + mineral;
                         ferramentas.linhas(50);
-                        System.out.println("Você recebeu "+mineral+" minerios!");
+                        System.out.println("VocÃª recebeu "+mineral+" minerios!");
                         ferramentas.para();
                     }
                     public void setErvas(int planta) {
                         ervas = ervas + planta;
                         ferramentas.linhas(50);
-                        System.out.println("Você recebeu "+planta+" ervas!");
+                        System.out.println("VocÃª recebeu "+planta+" ervas!");
                         ferramentas.para();
                     }
                     public void setPocao(int frasco) {
                         pocao = pocao + frasco;
                         ferramentas.linhas(50);
-                        System.out.println("Incrivel!!!\n   Você recebeu "+frasco+" poções!!!");
+                        System.out.println("Incrivel!!!\n   VocÃª recebeu "+frasco+" poÃ§Ãµes!!!");
                         ferramentas.para();
                     }
 
@@ -125,7 +124,7 @@ public class Mochila extends Armas{
                             menu = false;
                             ferramentas.linhas(50);
                             if (erro == 1) {
-                                System.out.println("Ops!\nNão existe essa opção, tente outra!");
+                                System.out.println("Ops!\nNÃ£o existe essa opÃ§Ã£o, tente outra!");
                             }
                             erro = 0;
                             ferramentas.linhas(2);
@@ -133,11 +132,11 @@ public class Mochila extends Armas{
                             ferramentas.linhas(1);
                             System.out.println("nivel da mochila " + getNvMochila());
                             System.out.println("nivel da espada " + getNvEspada());
-                            System.out.println("Você possui: "+pocao+" poções");
+                            System.out.println("VocÃª possui: "+pocao+" poÃ§Ãµes");
                             ferramentas.linhas(2);
                             System.out.println("1. upgrade mochila " + pano + "/" + panoUp);
                             System.out.println("2. upgrade espada " + minerio + "/" + minerioUp);
-                            System.out.println("3. munições\n4. criar poção "+ ervas +"/5");
+                            System.out.println("3. muniÃ§Ãµes\n4. criar poÃ§Ã£o "+ ervas +"/5");
                             System.out.println("5. sair");
 
                             try { opcao = new Scanner(System.in).nextInt(); }
@@ -170,15 +169,15 @@ public class Mochila extends Armas{
                 }
                 public void getMunicoes(String nome){
                         ferramentas.linhas(50);
-                        System.out.println("        Munições");
+                        System.out.println("        MuniÃ§Ãµes");
                         ferramentas.linhas(2);
-                        System.out.println(nome+"Você possui:");
+                        System.out.println(nome+"VocÃª possui:");
                         ferramentas.linhas(1);
                         System.out.println("Mana: "+getMana()+"/"+getLimiteMana());
                         System.out.println("Balas: "+getBala()+"/"+getLimiteBala());
                         System.out.println("Granadas: "+getGranada()+"/"+getLimiteGranada());
                         System.out.println("Flechas: "+getFlecha()+"/"+getLimiteFlecha());
-                        System.out.println("Poções: "+pocao);
+                        System.out.println("PoÃ§Ãµes: "+pocao);
                         ferramentas.para();
                 }
 }

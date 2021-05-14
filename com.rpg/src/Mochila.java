@@ -128,6 +128,7 @@ public class Mochila extends Armas{
                             ferramentas.linhas(1);
                             System.out.println("nivel da mochila " + getNvMochila());
                             System.out.println("nivel da espada " + getNvEspada());
+                            System.out.println("Você possui: "+pocao+" poções");
                             ferramentas.linhas(2);
                             System.out.println("1. upgrade mochila " + pano + "/" + panoUp);
                             System.out.println("2. upgrade espada " + minerio + "/" + minerioUp);
@@ -172,6 +173,7 @@ public class Mochila extends Armas{
                         System.out.println("Balas: "+getBala()+"/"+getLimiteBala());
                         System.out.println("Granadas: "+getGranada()+"/"+getLimiteGranada());
                         System.out.println("Flechas: "+getFlecha()+"/"+getLimiteFlecha());
+                        System.out.println("Poções: "+pocao);
                         ferramentas.para();
                 }
 }

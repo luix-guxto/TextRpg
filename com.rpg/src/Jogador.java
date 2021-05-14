@@ -1,34 +1,33 @@
-//definir como atribuir dano ao inimigo usando a arma
+//finalizado
+//\\opcional, apos aprender banco de dados, usar para criar um save game
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Jogador{
-    Armas arma = new Armas();
     Ferramentas ferramentas = new Ferramentas();
+    Random aleatorio = new Random();
     private String nome;
     private double nv=1;
-    private double xp, vidaLimite=100, vida=100, limitXp=100;
+    private double xp=0, vidaLimite=20, vida=20, limitXp=10;
     private double kill;
     private double score =0;
-    private double danoBase=7;
+    private double danoBase=2;
 
-    public void pause(){
-        setScore();
-        ferramentas.linhas(50);
+    public double getKill() {
+        return kill;
+    }
 
-           System.out.println("Jogo pausado");
+    public double getVidaLimite() {
+        return vidaLimite;
+    }
 
-       ferramentas.linhas(1);
-
-           System.out.println(nome);
-           System.out.println("Sua pontuação é: "+score);
-           System.out.println("Life: "+vida+"/"+vidaLimite);
-           System.out.println("Você matou "+kill+" monstros");
-
-       ferramentas.para();
+    public double getNv() {
+        return nv;
     }
 
     public void setNome(){
+        ferramentas.linhas(50);
         System.out.println("Qual seu nome meu bravo heroi?");
         ferramentas.linhas(1);
         nome=new Scanner(System.in).nextLine()+" ";
@@ -37,26 +36,35 @@ public class Jogador{
     public void tomaDano(double damage){ this.vida=vida-damage; }
     public void recuperaVida(double recupera){
         this.vida=vida+recupera;
-        if(vida<vidaLimite){ vida=vidaLimite; }
+        if(vida>vidaLimite){ vida=vidaLimite; }
     }
 
-    public double getDano(double danoArma){ return danoBase*danoArma; }
+    public double getDano(double danoArma){
+        return danoBase+danoArma;
+    }
 
     public void setNv(){
+        int vezes = 0;
         while(xp>=limitXp){
             nv++            ;
             danoBase=Math.floor(danoBase + danoBase * 0.5);
             vidaLimite+=10  ;
             vida=vidaLimite ;
             xp-=limitXp     ;
-            limitXp = Math.floor(limitXp + limitXp * 0.1);
+            vezes++;
+            limitXp = Math.floor(limitXp + (limitXp * aleatorio.nextDouble()));
+        }
+        if(vezes>0) {
+            System.out.println(nome + "você subiu de nivel "+vezes+" vezes! :D");
+        }else{
+            System.out.println("Você não subiu de nivel : |");
         }
     }
 
-    public void     setScore    ()                  { score = Math.floor((xp+nv+kill)/100)      ;   }
+    public void     setScore    (int nivelEspada)                  { score = nv+kill+nivelEspada  ;   }
     public double   getScore    ()                  { return score                              ;   }
-    public void     setXp       (double experiencia){ this.xp=xp+experiencia                    ;   }
-    public void     setKill     (double matou)      { this.kill=kill+matou                      ;   }
+    public void     setXp       (double experiencia){ xp=xp+experiencia                         ;   }
+    public void     setKill     ()                  { kill++                                    ;   }
     public String   getNome     ()                  { return nome                               ;   }
     public double   getVida     ()                  { return vida                               ;   }
 }

@@ -23,66 +23,97 @@ public class Inimigos {
 
     //retorna os dados do inimigo
     public String nomeInimigo(){
-        switch (idInimigo){
-            case  1:{ return "Slime"; }
-            case  2:{ return "Esqueleto"; }
-            case  3:{ return "Zumbi"; }
-            case  4:{ return "Guerreiro"; }
-            case  5:{ return "Lobizomem"; }
-            case  6:{ return "Mago"; }
-            case  7:{ return "Militar"; }
-            case  8:{ return "Exercíto"; }
-            case  9:{ return "Fantasma"; }
-            case 10:{ return "Chefão"; }
-            default:{ return "nenhum inimigo"; }
-        }
+
+
+            if (idInimigo == 2){ return "Esqueleto"; }
+            if (idInimigo == 3){ return "Zumbi"; }
+            if (idInimigo == 4){ return "Guerreiro"; }
+            if (idInimigo == 5){ return "Lobizomem"; }
+            if (idInimigo == 6){ return "Mago"; }
+            if (idInimigo == 7){ return "Militar"; }
+            if (idInimigo == 8){ return "Exercíto"; }
+            if (idInimigo == 9){ return "Fantasma"; }
+            if (idInimigo == 10){ return "Chefão"; }
+        else{ return "Slime"; }
     }
+
+    public int getIdInimigo() {
+        return idInimigo;
+    }
+
     public double getVida(){ return vida; }
-    public double getVidaLimite(){ return vidaLimite; }
     public String vida(){ return vida+"/"+vidaLimite; }
 
     //define qual inimigo o jogador vai enfrentar
-    public void setIdInimigo(int nivelJogador, double vidaJogador) {
+    public void setIdInimigo(double nivelJogador, double vidaJogador) {
         //conforme o nivel do jogador sobe, aparece inimigos mais fortes
-        if(nivelJogador >=0  && nivelJogador <=  2){ idInimigo = aleatorio.nextInt( 2); } //nenhum ou slime
-        if(nivelJogador > 2  && nivelJogador <=  5){ idInimigo = aleatorio.nextInt( 3); }
-        if(nivelJogador > 5  && nivelJogador <=  8){ idInimigo = aleatorio.nextInt( 4); }
-        if(nivelJogador > 8  && nivelJogador <= 10){ idInimigo = aleatorio.nextInt( 5); }
-        if(nivelJogador > 10 && nivelJogador <= 15){ idInimigo = aleatorio.nextInt( 6); }
-        if(nivelJogador > 15 && nivelJogador <= 18){ idInimigo = aleatorio.nextInt( 7); }
-        if(nivelJogador > 18 && nivelJogador <= 25){ idInimigo = aleatorio.nextInt( 8); }
-        if(nivelJogador > 25 && nivelJogador <= 30){ idInimigo = aleatorio.nextInt(10); } //todos
-        else                                       { idInimigo = aleatorio.nextInt(11); } //todos e boss
-        switch (idInimigo){
-
-            //inimigos
-            case  1:{this.vidaLimite = 10; this.dano =   2;} //slime
-            case  2:{this.vidaLimite =  5; this.dano =  10;} //esqueleto
-            case  3:{this.vidaLimite = 10; this.dano =  10;} //zumbi
-            case  4:{this.vidaLimite = 15; this.dano =  10;} //guerreiro
-            case  5:{this.vidaLimite = 20; this.dano =  15;} //lobizomen
-            case  6:{this.vidaLimite = 15; this.dano =  25;} //mago
-            case  7:{this.vidaLimite = 30; this.dano =  30;} //militar
-            case  8:{this.vidaLimite = 50; this.dano = 100;} //exercito
-            case  9:{this.vidaLimite = 100;this.dano = 50;} //fantasma
+        if(nivelJogador >=0  && nivelJogador <=  2){ idInimigo = 1; } //nenhum ou slime
+        else {
+            if (nivelJogador > 2 && nivelJogador <= 5) {
+                idInimigo = aleatorio.nextInt(2)+1;
+            }else{
+            if (nivelJogador > 5 && nivelJogador <= 8) {
+                idInimigo = aleatorio.nextInt(3)+1;
+            }else{
+            if (nivelJogador > 8 && nivelJogador <= 10) {
+                idInimigo = aleatorio.nextInt(4)+1;
+            }else{
+            if (nivelJogador > 10 && nivelJogador <= 15) {
+                idInimigo = aleatorio.nextInt(5)+1;
+            }else{
+            if (nivelJogador > 15 && nivelJogador <= 18) {
+                idInimigo = aleatorio.nextInt(6)+1;
+            }else{
+            if (nivelJogador > 18 && nivelJogador <= 25) {
+                idInimigo = aleatorio.nextInt(7)+1;
+            }else{
+            if (nivelJogador > 25 && nivelJogador <= 30) {
+                idInimigo = aleatorio.nextInt(8)+1;
+            }else{
+                if (nivelJogador > 30 && nivelJogador<=50){
+                    idInimigo = aleatorio.nextInt(9)+1;
+                }//todos
+            else {
+                idInimigo = aleatorio.nextInt(10)+1;
+            }
+        }}}}}}}}//todos e boss
+        System.out.println();
+        //inimigos
+            if(idInimigo == 1){vida = 10; dano =   2;} //slime
+            if(idInimigo == 2){vida =  5; dano =  10;} //esqueleto
+            if(idInimigo == 3){vida = 10; dano =  10;} //zumbi
+            if(idInimigo == 4){vida = 15; dano =  10;} //guerreiro
+            if(idInimigo == 5){vida = 20; dano =  15;} //lobizomen
+            if(idInimigo == 6){vida = 15; dano =  25;} //mago
+            if(idInimigo == 7){vida = 30; dano =  30;} //militar
+            if(idInimigo == 8){vida = 50; dano = 100;} //exercito
+            if(idInimigo == 9){vida = 100;dano = 50;} //fantasma
 
             //boss
-            case 10:{this.vidaLimite = vidaJogador; this.dano = 120;} //boss
+            if(idInimigo == 10){vidaLimite = vidaJogador; dano = 120;} //boss
+vidaLimite = vida;
 
-            //nenhum
-            default:{vidaLimite =  0; dano =   0;} //boss
+    }
+
+
+
+    //da xp
+    public double giveXp(){
+        if(vida<=0) {
+            return Math.floor((aleatorio.nextDouble() * (idInimigo + aleatorio.nextInt(100)) + idInimigo));
+
         }
-        setVida();
+        else {
+            return 0;
+        }
     }
 
     //dano do inimigo
     public double getDano(){ if( vida > 0 ){ return dano; } else{ return 0; } }
 
     //inimigo recebe o dano
+    public void setVida(double damage) { vida -= damage; }
 
-    public void setVida(double damage) { this.vida = vida - damage; }
 
-    //define a vida do inimigo pelo id
-    private void setVida(){ vida=vidaLimite; }
 
 }

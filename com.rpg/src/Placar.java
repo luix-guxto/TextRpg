@@ -1,4 +1,6 @@
 //finalizado
+//\\opcional, apos aprender banco de dados, aplicar para salvar o placar
+
 public class Placar {
     Ferramentas ferramentas = new Ferramentas();
 
@@ -30,11 +32,12 @@ public class Placar {
 
 
     private int posicaoMenor;
+    private double menorScore;
 
 
             //pega a menor posição
             public void setPosicaoMenor(){
-                double menorScore = placarScore[0];
+                menorScore = placarScore[0];
                 posicaoMenor=0;
                 for(int varrendo = 0; varrendo<10 ; varrendo++) {
                     if (placarScore[varrendo] < menorScore) {
@@ -53,9 +56,13 @@ public class Placar {
                 setPosicaoMenor();
                 this.placarScore[posicaoMenor]=pontuacao;
             }
+            public double getMenorScore(){
+                return menorScore;
+            }
 
             //imprime o placar
             public void imprimePlacar(){
+                ferramentas.linhas(50);
                 setPosicaoMenor();
 
                 int top1, top2, top3, top4, top5, top6, top7, top8, top9, top10;

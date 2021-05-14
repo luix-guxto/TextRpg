@@ -1,4 +1,6 @@
 //definir o retorno do dano da arma
+//\\opcional, apos aprender banco de dados, usar para criar um save game
+
 public class Armas{
     Ferramentas ferramentas = new Ferramentas();
     Menu menu = new Menu();
@@ -44,28 +46,100 @@ public class Armas{
 
     //levelUp da mochila
     public void upLimiteMana() { limiteMana=(int)Math.floor(limiteMana + (limiteMana * 0.5)); }
-    public void upLimiteBala() { limiteBala=(int)Math.floor(limiteMana + (limiteBala * 0.9)); }
+    public void upLimiteBala() { limiteBala=(int)Math.floor(limiteBala + (limiteBala * 0.9)); }
     public void upLimiteFlecha() { limiteFlecha=(int)Math.floor(limiteFlecha + (limiteFlecha * 0.7)); }
     public void upLimiteGranada() { limiteGranada=(int)Math.floor(limiteGranada + (limiteGranada * 0.6)); }
     public void setNvEspada() { nvEspada++; }
     public void upTudo() { upLimiteMana(); upLimiteBala(); upLimiteFlecha(); upLimiteGranada(); }
-
+    public void reiniciar(){ limiteBala = 10; limiteFlecha = 10; limiteGranada = 5; limiteMana = 500; nvEspada = 1;}
+public boolean temMunicao(){
+        if(idArma == 1){ return true;}
+        else{
+            if(idArma == 2){ return true;}
+            else{
+                if (idArma == 3){
+                    if(bala>0){ return true; } else { return false; }
+                }else{
+                    if (idArma == 4){
+                        if(bala>=5){ return true;} else { return false; }
+                    }else {
+                        if(idArma == 5){
+                            if (flecha>0){ return true; } else {return false;}
+                        }else {
+                            if (idArma == 6){
+                                if(flecha>=3){ return true; }else {return false;}
+                            }else{
+                                if (idArma == 7){
+                                    if(granada>0){ return true; }else {return false;}
+                                }else{
+                                    if (idArma == 8){
+                                        if (granada>0){ return true; }else {return false;}
+                                    }else{
+                                        if (idArma == 9) {
+                                            if (mana>=50){ return true; }else {return false;}
+                                        }else{
+                                            if (idArma == 10) {
+                                                if (mana > 0) { return true; } else { return false; }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+}
     //recarrega munição
     public void setBala(int municao) {
         this.bala = bala + municao;
         if(bala > limiteBala){ bala = limiteBala; }
+        ferramentas.linhas(50);
+        System.out.println("Você recebeu "+municao+" balas");
+        System.out.println("bala: "+bala+"/"+limiteBala);
+        ferramentas.para();
     }
-    public void setGranada(int granadas) {
-        this.granada =granada + granadas;
+    public void setGranada(int municao) {
+        this.granada =granada + municao;
         if(granada > limiteGranada) { granada = limiteGranada; }
+        ferramentas.linhas(50);
+        System.out.println("Você recebeu "+municao+" granadas");
+        System.out.println("granadas: "+granada+"/"+limiteGranada);
+        ferramentas.para();
     }
-    public void setFlecha(int flechas) {
-        this.flecha = flecha + flechas;
+    public void setFlecha(int municao) {
+        this.flecha = flecha + municao;
         if(flecha > limiteFlecha) { flecha = limiteFlecha; }
+        ferramentas.linhas(50);
+        System.out.println("Você recebeu "+municao+" flechas");
+        System.out.println("flechas: "+flecha+"/"+limiteFlecha);
+        ferramentas.para();
     }
-    public void setMana(int manas) {
-        this.mana = mana + manas;
+    public void setMana(int municao) {
+        this.mana = mana + municao;
         if (mana > limiteMana) { mana = limiteMana; }
+        ferramentas.linhas(50);
+        System.out.println("Você recebeu "+municao+" de mana");
+        System.out.println("mana: "+mana+"/"+limiteMana);
+        ferramentas.para();
+    }
+
+    //nome da arma
+    public String getNomeArma(){
+        if(idArma == 2){return "ESPADA";}
+        if(idArma == 3){return "PISTOLA";}
+        if(idArma == 4){return "METRALHADORA";}
+        if(idArma == 5){return "ARCO";}
+        if(idArma == 6){return "BESTA";}
+        if(idArma == 7){return "GRANADA";}
+        if(idArma == 8){return "LANÇA GRANADAS";}
+        if(idArma == 9){return "BOLA DE FOGO";}
+        if(idArma ==10){return "KAMEHA";}
+        else{
+            return "Soco";
+        }
     }
 
     //menu arma
@@ -73,91 +147,46 @@ public class Armas{
 
 
     //usa a Arma
-     /* public void usaArma(){
-        switch (idArma){
-            case 1:{
-                System.out.println(getNome()+"usa o soco na cara\n( POW )");
-                getDano(1);
-            }
-            case 2:{
-                System.out.println(getNome()+"usa a espada e corta o inimigo\n( VAP )");
-                getDano(1);
-            }
-            case 3:{
-                if(bala>0){
-                System.out.println(getNome()+"usa a pistola e acerta o tiro\n( PAPAPA )");
-                getDano(1);
-                bala-=1;
-                }
-                else{
-                    System.out.println(getNome()+"você não tem balas o suficiente :(\n"+bala+"/1 balas nescessarias");
-                }
-            }
-            case 4:{
-                if(bala>=5){
-                System.out.println(getNome()+"usa a metralhadora e bagaça a cara\n( TRA TA TA TA TRA");
-                getDano(5 * 1);
-                bala-=5;
-                } else{
-                    System.out.println(getNome()+"você não tem balas o suficiente :(\n"+bala+"/5 balas nescessarias");
-                }
-            }
-            case 5:{
-                if(flecha>0) {
-                    System.out.println(getNome() + "usa o arco e da uma de Robin Hood\n( FEW )");
-                    getDano(1);
-                    flecha -= 1;
-                }else{
-                    System.out.println(getNome()+"você não tem flechas o suficiente :(\n"+flecha+"/1 flechas nescessarias");
-                }
-            }
-            case 6:{
-                if(flecha>=3) {
-                    System.out.println(getNome() + "usa a besta, oloco 3 flechas\n( FEW, FEW, FEW )");
-                    getDano(3 * 1);
-                    flecha -= 3;
-                }else {
-                    System.out.println(getNome()+"você não tem flechas o suficiente :(\n"+flecha+"/3 flechas nescessarias");
-                }
-            }
-            case 7:{
-                if(granada>0) {
-                    System.out.println(getNome() + "usa a gradana!\nFIRE IN THE HOLE\n\n( BOOOOOM! ) ");
-                    getDano(1);
-                    granada -= 1;
-                }else{
-                    System.out.println(getNome()+"Você não tem granadas o suficiente :(\n"+granada+"/1 granadas nescessarias");
-                }
-            }
-            case 8:{
-                if(granada>=3) {
-                    System.out.println(getNome() + "usa o lança granadas\nApelou kkk\n\n( BOOOM BOOM BOOOOM )");
-                    getDano(granada * 1);
-                    granada -= granada;
-                }else{
-                    System.out.println(getNome()+"Você não tem granadas o suficiente :(\n"+granada+"/3 no minimo para usar");
-                }
-            }
-            case 9:{
-                if(mana>=50) {
-                    System.out.println(getNome() + "usa a bola de fogo\n ( FLUEW )");
-                    getDano(1);
-                    mana -= 50;
-                }else{
-                    System.out.println(getNome()+"Você não tem mana o suficiente :(\n"+mana+"/50 mana nescessaria");
-                }
-            }
-            case 10:{
-                if(mana>=100) {
-                    System.out.println(getNome() + "usa o KAMEHAHA\n( KAAA - MEEE - HAAA - MEEE - HAAAAAAAAAAAAAAA )\nVocê gastou "+mana+" e ficou com nada");
-                    getDano(mana * 1);
-                    mana -= mana;
-                }else{
-                    System.out.println(getNome()+"Você não tem mana o suficiente :(\n"+mana+"/100 no minimo para usar");
-                }
-            }
-
+     public double danoArma(){
+        double dano = 1;
+        if (idArma == 1){
+            dano = 0;
         }
-
-    } */
+        if (idArma == 2){
+            dano=nvEspada*3;
+        }
+        if (idArma ==3){
+            dano=5;
+            bala--;
+        }
+        if (idArma == 4){
+            dano=5*5;
+            bala-=5;
+        }
+        if (idArma == 5){
+            dano=4;
+            flecha--;
+        }
+        if (idArma == 6){
+            dano=4*3;
+            flecha-=3;
+        }
+        if (idArma == 7){
+            dano=10;
+            granada--;
+        }
+        if (idArma == 8){
+            dano=10*granada;
+            granada-=granada;
+        }
+        if (idArma == 9){
+            dano=7;
+            mana-=50;
+        }
+        if (idArma == 10){
+            dano=2*mana;
+            mana-=mana;
+        }
+        return dano;
+     }
 }

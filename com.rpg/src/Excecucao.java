@@ -1,29 +1,32 @@
 //fazer o roteiro de execução
-import java.util.Calendar;
-
 public class Excecucao {
     public static void main(String[] args){
         //instancia os objetos
-        Ferramentas ferramentas = new Ferramentas();
         Jogo jogo = new Jogo();
+        Menu menu = new Menu();
 
-        //pega o tempo atual de agora
-        Calendar hoje = Calendar.getInstance();
-        int diaHoje = hoje.get(Calendar.DAY_OF_MONTH),
-            mesHoje=hoje.get(Calendar.MONTH),
-            anoHoje=hoje.get(Calendar.YEAR),
-            horaHoje=hoje.get(Calendar.HOUR_OF_DAY),
-            minutoHoje=hoje.get(Calendar.MINUTE);
-
-
-        //testando ainda
-        jogo.mochila.menuMochila("pedro");
-
-
-
-
-
-
+        for (boolean loopGame = true; loopGame;){
+            int principal = menu.menuPrincipal();
+            if(principal == 1){
+                jogo.setJogador();
+                for(boolean loopJogador = true; loopJogador;){
+                    jogo.andar();
+                    if(jogo.jogadorVivo()){
+                        loopJogador=false;
+                        jogo.gameOver();
+                        principal = menu.gameOver(jogo.jogador.getNome(),jogo.jogador.getScore(),jogo.jogador.getNv());
+                        if(principal == 2){
+                            loopGame = false;
+                        }
+                    }
+                }
+                jogo.placar.imprimePlacar();
+            }
+            if (principal == 3){
+                jogo.placar.imprimePlacar();
+            }
+            else {loopGame = false;}
+        }
 
 //
     }

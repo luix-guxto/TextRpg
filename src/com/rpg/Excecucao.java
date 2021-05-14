@@ -1,4 +1,3 @@
-//fazer o roteiro de execução
 package com.rpg;
 public class Excecucao {
     public static void main(String[] args){
@@ -22,7 +21,7 @@ int principal = menu.menuPrincipal();
                         	
                         }else {
                         	jogo.ferramentas.linhas(50);
-                        	System.out.println("Que pena seu score � muito baixo :(\n Mais sorte na proxima vez");
+                        	System.out.println("Que pena seu score é muito baixo :(\n Mais sorte na proxima vez");
                         	jogo.ferramentas.para();
                         }
                        int principalGameOver = menu.gameOver(jogo.jogador.getNome(),jogo.jogador.getScore(),jogo.jogador.getNv());
@@ -38,7 +37,7 @@ int principal = menu.menuPrincipal();
                 jogo.placar.imprimePlacar();
             }
         }
-        System.out.println("At� a proxima!!!");
+        System.out.println("Até a proxima!!!");
 
 //
     }

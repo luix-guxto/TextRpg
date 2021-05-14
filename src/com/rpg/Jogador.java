@@ -1,6 +1,6 @@
 //finalizado
 //\\opcional, apos aprender banco de dados, usar para criar um save game
-
+package com.rpg;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -55,9 +55,9 @@ public class Jogador{
             limitXp = Math.floor(limitXp + (limitXp * aleatorio.nextDouble()));
         }
         if(vezes>0) {
-            System.out.println(nome + "vocÃª subiu de nivel "+vezes+" vezes! :D");
+            System.out.println(nome + "você subiu de nivel "+vezes+" vezes! :D");
         }else{
-            System.out.println("VocÃª nÃ£o subiu de nivel : |");
+            System.out.println("Você não subiu de nivel : |");
         }
     }
 
@@ -65,6 +65,7 @@ public class Jogador{
     public double   getScore    ()                  { return score                              ;   }
     public void     setXp       (double experiencia){ xp=xp+experiencia                         ;   }
     public void     setKill     ()                  { kill++                                    ;   }
+    public void     mata        ()                  { vida = 0;                                     }
     public String   getNome     ()                  { return nome                               ;   }
     public double   getVida     ()                  { return vida                               ;   }
 }

@@ -1,5 +1,5 @@
 //finalizado
-
+package com.rpg;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class Menu {
 
             ferramentas.linhas(50);
             if (erro == 1) {
-                System.out.println("Ops!\nEssa Arma nÃ£o existe, tente outra!");
+                System.out.println("Ops!\nEssa Arma não existe, tente outra!");
             }
             erro = 0;
             ferramentas.linhas(1);
@@ -26,7 +26,7 @@ public class Menu {
 
             System.out.println("1.soco              2.espada nv." + nivEspada + "     3.pistola");
             System.out.println("4.metralhadora      5.arco                  6.besta");
-            System.out.println("7.granada           8.lanÃ§a granadas        9.bola de fogo");
+            System.out.println("7.granada           8.lança granadas        9.bola de fogo");
             System.out.println("                    10.KAMEHAMEHA!!!");
             try {
 
@@ -52,16 +52,16 @@ public class Menu {
 
             for(boolean escolhendo = true; escolhendo;){
                 ferramentas.linhas(50);
-                if(erro == 1){ System.out.println("Ops!\nOpÃ§Ã£o invalida, tente outra!"); }
+                if(erro == 1){ System.out.println("Ops!\nOpção invalida, tente outra!"); }
                 erro = 0;
                 opcaoDoMenu=0;
                 System.out.println("        TextRpg");
                 ferramentas.linhas(1);
                 System.out.println("Menu principal :)");
                 ferramentas.linhas(2);
-                System.out.println("1. ComeÃ§ar");
+                System.out.println("1. Começar");
                 System.out.println("2. Sobre o Jogo\n3. Placar");
-                System.out.println("4. Parar de Jogar :Â´(");
+                System.out.println("4. Parar de Jogar :´(");
 
                 try{
                     opcaoDoMenu = new Scanner(System.in).nextInt();
@@ -87,15 +87,15 @@ public class Menu {
         erro=0;
             for(boolean gameFim = true; gameFim;) {
                     ferramentas.linhas(50);
-                    if(erro == 1){ System.out.println("Ops!\nOpÃ§Ã£o invalida, tente outra!"); }
+                    if(erro == 1){ System.out.println("Ops!\nOpção invalida, tente outra!"); }
                     erro = 0;
                 System.out.println("                            Game Over" +
                         "\n" +
-                        "\n"+nomea+"VocÃª ficou com o score de "+score+" pontos e seu nivel final "+nivel+
+                        "\n"+nomea+"Você ficou com o score de "+score+" pontos e seu nivel final "+nivel+
                         "\n"+
                         "\n                                     Continue?" +
                         "\n" +
-                        "\n                 1. Sim!                                   2. Murri :Â´(");
+                        "\n                 1. Sim!                                   2. Murri :´(");
                 try {
                     opcaoDoMenu=new Scanner(System.in).nextInt();
                 }catch (InputMismatchException f){
@@ -112,12 +112,9 @@ public class Menu {
     } //1 continua 2 termina
 
 
-    private void gameInfo() {
-        ferramentas.linhas(50);
-        System.out.println("        Game Info" + "\n" + "\nEsse Ã© um game baseado em O.O. ( OrirentaÃ§Ã£o a Objetos )" + "\nTentando implementar a funcionalidades do solid" + "\nNesse Rpg vocÃª possui armas e itens" + "\n" + "\nBy:LuÃ­x_Guxto" + "\n");
-        ferramentas.para();
+	    private void gameInfo() {
+	        ferramentas.linhas(50);
+	        System.out.println("        Game Info" + "\n" + "\nEsse é um game baseado em O.O. ( Orirentação a Objetos )" + "\nTentando implementar a funcionalidades do solid" + "\nNesse Rpg você possui armas e itens" + "\n" + "\nBy:Luix_Guxto" + "\n");
+	        ferramentas.para();
+	    }
     }
-    }
-
-
-

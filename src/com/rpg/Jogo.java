@@ -1,12 +1,9 @@
+package com.rpg;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 /*
-
-definir a batalha
-definir roteiro
-[ideia] fazer um mecanismo andar, onde aleatoriamente aparece um inimigo, ou aparece um loot
 //\\opcional definir save game
  */
 public class Jogo {
@@ -18,26 +15,6 @@ public class Jogo {
     Ferramentas ferramentas = new Ferramentas();
     private int bau = 0;
 
-    //imprime no placar seu score, caso ele seja maior que o menor score
-    private void escrevePlacar(){
-        placar.setPosicaoMenor();
-        jogador.setScore(mochila.getNvEspada());
-        if(jogador.getScore()>placar.getMenorScore()){
-            placar.setPlacarNome(jogador.getNome());
-            placar.setPlacarScore(jogador.getScore());
-        }
-        else{
-            System.out.println("Que pena, seu score Ã© muito baixo :(");
-        }
-    }
-
-    //verifica de morreu
-    public boolean inimigoVivo(){
-        return !(inimigos.getVida() > 0);
-    }
-    public boolean jogadorVivo(){
-        return !(jogador.getVida() > 0);
-    }
 
     //distribui os danos
     private void jogadorInfligeDano(){
@@ -69,7 +46,7 @@ public class Jogo {
             jogador.setKill();
             jogador.setXp(xp);
             ferramentas.linhas(50);
-            System.out.println("VocÃª recebeu "+xp+" de XP");
+            System.out.println( jogador.getNome()+"recebeu "+xp+" de XP");
             jogador.setNv();
             ferramentas.para();
     }
@@ -138,35 +115,27 @@ public class Jogo {
     //andar
     public void andar(){
         ferramentas.linhas(50);
-        System.out.println("vocÃª anda para frente e encontra");
+        System.out.println("você anda para frente e encontra");
         int andei = aleatorio.nextInt(2)+1;
         if(andei == 1){
             inimigos.setIdInimigo(jogador.getNv(), jogador.getVidaLimite());
-            System.out.println("VocÃª encontrou um novo inimigo! :O\num "+inimigos.nomeInimigo());
+            System.out.println(jogador.getNome()+"encontrou um novo inimigo! :O\num "+inimigos.nomeInimigo());
             ferramentas.para();
             batalhar();
             bau=0;
         }
-        if(andei == 2 && bau<=2){
-            System.out.println("VocÃª achou um bau!");
+        else{
+            System.out.println("Você achou um bau!");
             ferramentas.para();
             getLoot(10);
             bau++;
         }
-        else {andar();}
-
     }
 
     //inicia o game
     public void setJogador(){
         jogador.setNome();
         mochila.reinicia();
-    }
-
-    //termina o game
-    public void gameOver(){
-        jogador.setScore(mochila.getNvEspada());
-        escrevePlacar();
     }
 
     //batalha
@@ -178,18 +147,18 @@ public class Jogo {
         //menu
             for(boolean menu = true; menu ;) {
                 ferramentas.linhas(50);
-                if(erro == 1){ System.out.println("Ops!\nOpÃ§Ã£o invalida, tente outra!"); }
-                if(erro == 2){ System.out.println("Ops!\nAcabou a muniÃ§Ã£o, tente trocar de arma!"); }
+                if(erro == 1){ System.out.println("Ops!\nOpção invalida, tente outra!"); }
+                if(erro == 2){ System.out.println("Ops!\nAcabou a munição, tente trocar de arma!"); }
                 erro = 0;
                 System.out.println("        Batalhando contra " + inimigos.nomeInimigo());
                 ferramentas.linhas(3);
-                System.out.println("1. Escolher arma        2. atacar       3.usar poÃ§Ã£o    4. Mochila      5. Morrer :Â´(");
+                System.out.println("1. Escolher arma        2. atacar       3.usar poção    4. Mochila      5. Morrer :´(");
                 System.out.println(
                         "\nVida: " + jogador.getVida() + "/" + jogador.getVidaLimite() +
                                 "   Score: " + jogador.getScore() +
                                 "   Nivel: " + jogador.getNv() +
                                 "   Kills: " + jogador.getKill()+
-                                "   PoÃ§Ãµes: "+ mochila.getPocao());
+                                "   Poções: "+ mochila.getPocao());
                 try {
                         opcao = new Scanner(System.in).nextInt();
                     }catch (InputMismatchException h){
@@ -208,7 +177,7 @@ public class Jogo {
                     mochila.menuMochila(jogador.getNome());
                 }
                 if(opcao==5){
-                    jogador.tomaDano(jogador.getVidaLimite());
+                    jogador.mata();
                     menu=false;
                 }
                 if(opcao!=1 && opcao!=2 && opcao!=3 && opcao!=4){
@@ -216,18 +185,18 @@ public class Jogo {
                 }
             }
         //ataque
-            if(!(jogadorVivo())){
+            if(jogador.getVida()>0){
                 jogadorInfligeDano();
-                    if (!(inimigoVivo())){
+                    if (inimigos.getVida()>0){
                         jogadorRecebeDano();
                     }
             }
         //batalha acabou
-                if(inimigoVivo()){
+                if(inimigos.getVida()<=0){
                     inimigoMorreu();
                     batalhaRolando = false;
                 }
-                if (jogadorVivo()){
+                if (jogador.getVida()<=0){
                 batalhaRolando = false;
                 }
             }

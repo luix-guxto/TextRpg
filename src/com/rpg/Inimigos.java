@@ -1,4 +1,5 @@
 //finalizado
+package com.rpg;
 import java.util.Random;
 public class Inimigos {
     Random aleatorio = new Random();
@@ -31,9 +32,9 @@ public class Inimigos {
             if (idInimigo == 5){ return "Lobizomem"; }
             if (idInimigo == 6){ return "Mago"; }
             if (idInimigo == 7){ return "Militar"; }
-            if (idInimigo == 8){ return "Exercíto"; }
+            if (idInimigo == 8){ return "Exercito"; }
             if (idInimigo == 9){ return "Fantasma"; }
-            if (idInimigo == 10){ return "Chefão"; }
+            if (idInimigo == 10){ return "Chef�o"; }
         else{ return "Slime"; }
     }
 

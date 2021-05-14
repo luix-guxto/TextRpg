@@ -1,3 +1,4 @@
+package com.rpg;
 import java.util.Scanner;
 
 public class Ferramentas{

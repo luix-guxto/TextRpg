@@ -1,6 +1,6 @@
 //definir o retorno do dano da arma
 //\\opcional, apos aprender banco de dados, usar para criar um save game
-
+package com.rpg;
 public class Armas{
     Ferramentas ferramentas = new Ferramentas();
     Menu menu = new Menu();
@@ -97,7 +97,7 @@ public boolean temMunicao(){
         this.bala = bala + municao;
         if(bala > limiteBala){ bala = limiteBala; }
         ferramentas.linhas(50);
-        System.out.println("VocÃª recebeu "+municao+" balas");
+        System.out.println("Você recebeu "+municao+" balas");
         System.out.println("bala: "+bala+"/"+limiteBala);
         ferramentas.para();
     }
@@ -105,7 +105,7 @@ public boolean temMunicao(){
         this.granada =granada + municao;
         if(granada > limiteGranada) { granada = limiteGranada; }
         ferramentas.linhas(50);
-        System.out.println("VocÃª recebeu "+municao+" granadas");
+        System.out.println("Você recebeu "+municao+" granadas");
         System.out.println("granadas: "+granada+"/"+limiteGranada);
         ferramentas.para();
     }
@@ -113,7 +113,7 @@ public boolean temMunicao(){
         this.flecha = flecha + municao;
         if(flecha > limiteFlecha) { flecha = limiteFlecha; }
         ferramentas.linhas(50);
-        System.out.println("VocÃª recebeu "+municao+" flechas");
+        System.out.println("Você recebeu "+municao+" flechas");
         System.out.println("flechas: "+flecha+"/"+limiteFlecha);
         ferramentas.para();
     }
@@ -121,7 +121,7 @@ public boolean temMunicao(){
         this.mana = mana + municao;
         if (mana > limiteMana) { mana = limiteMana; }
         ferramentas.linhas(50);
-        System.out.println("VocÃª recebeu "+municao+" de mana");
+        System.out.println("Você recebeu "+municao+" de mana");
         System.out.println("mana: "+mana+"/"+limiteMana);
         ferramentas.para();
     }
@@ -134,7 +134,7 @@ public boolean temMunicao(){
         if(idArma == 5){return "ARCO";}
         if(idArma == 6){return "BESTA";}
         if(idArma == 7){return "GRANADA";}
-        if(idArma == 8){return "LANÃ‡A GRANADAS";}
+        if(idArma == 8){return "LANÇA GRANADAS";}
         if(idArma == 9){return "BOLA DE FOGO";}
         if(idArma ==10){return "KAMEHA";}
         else{

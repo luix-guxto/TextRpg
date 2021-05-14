@@ -1,6 +1,6 @@
 //finalizado
 //\\opcional, apos aprender banco de dados, aplicar para salvar o placar
-
+package com.rpg;
 public class Placar {
     Ferramentas ferramentas = new Ferramentas();
 
@@ -27,7 +27,7 @@ public class Placar {
             26,
             75,
             38,
-            11,
+            20,
             18 };
 
 
@@ -76,7 +76,7 @@ public class Placar {
                     }
                 }
                 top1 = posicaoMaior;
-                System.out.println("1ยบ "+placarNome[top1]+" - "+placarScore[top1]);
+                System.out.println("1บ  "+placarNome[top1]+" - "+placarScore[top1]);
 
                 posicaoMaior=posicaoMenor;
                 maiorScore =placarScore[posicaoMenor];
@@ -88,7 +88,7 @@ public class Placar {
                 }
 
                top2 = posicaoMaior;
-                System.out.println("2ยบ  "+placarNome[top2]+" - "+placarScore[top2]);
+                System.out.println("2บ  "+placarNome[top2]+" - "+placarScore[top2]);
 
                 posicaoMaior=posicaoMenor;
                 maiorScore =placarScore[posicaoMenor];
@@ -99,7 +99,7 @@ public class Placar {
                     }
                 }
                 top3 = posicaoMaior;
-                System.out.println("3ยบ  "+placarNome[top3]+" - "+placarScore[top3]);
+                System.out.println("3บ  "+placarNome[top3]+" - "+placarScore[top3]);
 
                 posicaoMaior=posicaoMenor;
                 maiorScore =placarScore[posicaoMenor];
@@ -110,7 +110,7 @@ public class Placar {
                     }
                 }
                 top4 = posicaoMaior;
-                System.out.println("4ยบ  "+placarNome[top4]+" - "+placarScore[top4]);
+                System.out.println("4บ  "+placarNome[top4]+" - "+placarScore[top4]);
 
                 posicaoMaior=posicaoMenor;
                 maiorScore =placarScore[posicaoMenor];
@@ -122,7 +122,7 @@ public class Placar {
                 }
 
                 top5 = posicaoMaior;
-                System.out.println("5ยบ  "+placarNome[top5]+" - "+placarScore[top5]);
+                System.out.println("5บ  "+placarNome[top5]+" - "+placarScore[top5]);
 
                 posicaoMaior=posicaoMenor;
                 maiorScore =placarScore[posicaoMenor];
@@ -134,7 +134,7 @@ public class Placar {
                     }
                 }
                top6 = posicaoMaior;
-                System.out.println("6ยบ  "+placarNome[top6]+" - "+placarScore[top6]);
+                System.out.println("6บ  "+placarNome[top6]+" - "+placarScore[top6]);
 
                 posicaoMaior=posicaoMenor;
                 maiorScore =placarScore[posicaoMenor];
@@ -146,7 +146,7 @@ public class Placar {
                     }
                 }
                top7 = posicaoMaior;
-                System.out.println("7ยบ  "+placarNome[top7]+" - "+placarScore[top7]);
+                System.out.println("7บ  "+placarNome[top7]+" - "+placarScore[top7]);
 
                 posicaoMaior=posicaoMenor;
                 maiorScore =placarScore[posicaoMenor];
@@ -160,7 +160,7 @@ public class Placar {
                 }
 
                 top8 = posicaoMaior;
-                System.out.println("8ยบ  "+placarNome[top8]+" - "+placarScore[top8]);
+                System.out.println("8บ  "+placarNome[top8]+" - "+placarScore[top8]);
 
                 posicaoMaior=posicaoMenor;
                 maiorScore =placarScore[posicaoMenor];
@@ -173,10 +173,10 @@ public class Placar {
                     }
                 }
                 top9 = posicaoMaior;
-                System.out.println("9ยบ  "+placarNome[top9]+" - "+placarScore[top9]);
+                System.out.println("9บ  "+placarNome[top9]+" - "+placarScore[top9]);
 
                 top10 = posicaoMenor;
-                System.out.println("10ยบ "+placarNome[top10]+" - "+placarScore[top10]);
+                System.out.println("10บ "+placarNome[top10]+" - "+placarScore[top10]);
 
                 ferramentas.para();
             }

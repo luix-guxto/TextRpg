@@ -13,7 +13,7 @@ public class Placar {
             "pedro",
             "marcos",
             "fernanda",
-            "luis",
+            "carlos",
             "henrique",
             "jose"};
 
@@ -21,14 +21,14 @@ public class Placar {
     private double[] placarScore = {
             10,
             15,
-            120,
+            97,
             30,
             35,
             26,
             75,
-            350,
+            38,
             11,
-            185 };
+            18 };
 
 
     private int posicaoMenor;

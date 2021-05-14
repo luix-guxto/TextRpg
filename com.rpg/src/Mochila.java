@@ -131,7 +131,7 @@ public class Mochila extends Armas{
                             ferramentas.linhas(2);
                             System.out.println("1. upgrade mochila " + pano + "/" + panoUp);
                             System.out.println("2. upgrade espada " + minerio + "/" + minerioUp);
-                            System.out.println("3. munições\n4. criar poção");
+                            System.out.println("3. munições\n4. criar poção "+ ervas +"/5");
                             System.out.println("5. sair");
 
                             try { opcao = new Scanner(System.in).nextInt(); }

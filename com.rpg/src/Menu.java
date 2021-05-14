@@ -24,7 +24,7 @@ public class Menu {
 
             ferramentas.linhas(1);
 
-            System.out.println("1.soco              2.espada nv." + nivEspada + "       3.pistola");
+            System.out.println("1.soco              2.espada nv." + nivEspada + "     3.pistola");
             System.out.println("4.metralhadora      5.arco                  6.besta");
             System.out.println("7.granada           8.lança granadas        9.bola de fogo");
             System.out.println("                    10.KAMEHAMEHA!!!");

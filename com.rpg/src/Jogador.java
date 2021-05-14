@@ -47,8 +47,8 @@ public class Jogador{
         int vezes = 0;
         while(xp>=limitXp){
             nv++            ;
-            danoBase=Math.floor(danoBase + danoBase * 0.5);
-            vidaLimite+=10  ;
+            danoBase=danoBase++;
+            vidaLimite+=aleatorio.nextInt(15);
             vida=vidaLimite ;
             xp-=limitXp     ;
             vezes++;

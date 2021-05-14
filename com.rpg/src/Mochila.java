@@ -84,7 +84,12 @@ public class Mochila extends Armas{
                         }
                         ferramentas.para();
                     }
-                    public int getNvMochila() { return nvMochila; }
+
+    public int getPocao() {
+        return pocao;
+    }
+
+    public int getNvMochila() { return nvMochila; }
 
                 //pega itens
                     public void setPano(int tecido) {

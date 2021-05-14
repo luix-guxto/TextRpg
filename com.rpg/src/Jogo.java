@@ -183,12 +183,13 @@ public class Jogo {
                 erro = 0;
                 System.out.println("        Batalhando contra " + inimigos.nomeInimigo());
                 ferramentas.linhas(3);
-                System.out.println("1. Escolher arma        2. atacar       3.usar poção    4. Mochila");
+                System.out.println("1. Escolher arma        2. atacar       3.usar poção    4. Mochila      5. Morrer :´(");
                 System.out.println(
                         "\nVida: " + jogador.getVida() + "/" + jogador.getVidaLimite() +
                                 "   Score: " + jogador.getScore() +
                                 "   Nivel: " + jogador.getNv() +
-                                "   Kills: " + jogador.getKill());
+                                "   Kills: " + jogador.getKill()+
+                                "   Poções: "+ mochila.getPocao());
                 try {
                         opcao = new Scanner(System.in).nextInt();
                     }catch (InputMismatchException h){

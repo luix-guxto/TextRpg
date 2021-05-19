@@ -12,7 +12,7 @@
 
 ## Contato
 * [GitHub](https://github.com/luix-guxto)
-* [WhatsApp](wa.me/5531999949012)
+* [WhatsApp](https://wa.me/5531999949012)
 
 ## Agradecimento especial
 
